@@ -33,7 +33,7 @@ export default function About() {
             <p className="text-gray-300 leading-relaxed mb-4">
               이러한 기술적 배경을 바탕으로, 저는 프론트엔드뿐만 아니라 풀스택 개발자로서도 기여할 수 있습니다. 새로운 기술을 꾸준히 배우고 프로젝트에 적용해 최적의 솔루션을 찾기 위해 노력하고 있습니다.
             </p>
-            <div className="font-signature mt-8 italic md:w-2/3">
+            <div className="font-signature mt-8 md:w-1/4">
               <Image src="/images/si.png" alt="Signature" width={100} height={32} />
             </div>
           </div>
