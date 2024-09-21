@@ -1,0 +1,442 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, 'NotoSans', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-left-color: #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@font-face {
+  font-family: 'NotoSans'; /* 폰트 이름 지정 */
+  src: url('/fonts/NotoSansKR-VariableFont_wght.ttf') format('truetype'); /* 폰트 경로 */
+  font-weight: normal;
+  font-style: normal;
+}
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+/* Global styles */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.65;
+  color: #e1e1e1;
+  background-color: #6b6c6d;
+}
+
+
+/* Experience title style */
+.experience-title {
+  @apply text-2xl font-semibold uppercase tracking-wider text-center py-8 relative;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-color: #00A3E1;
+}
+
+.experience-title::before,
+.experience-title::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  background-color: #00A3E1;
+  bottom: 0;
+}
+
+.experience-title::before {
+  left: 0;
+}
+
+.experience-title::after {
+  right: 0;
+}
+
+/* Spacing */
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.pt-50 {
+  padding-top: 50px !important;
+}
+
+.pb-50 {
+  padding-bottom: 50px !important;
+}
+/* resume */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.65;
+    color: #e1e1e1;
+    background-color: #6B6C6D;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", "NotoSans";
+    color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Watson specific CSS */
+.page-heading {
+    margin: 50px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-heading h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.subheading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.subheading h3 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.subheading h3:before,
+.subheading h3:after {
+    content: "";
+    width: 2px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 0;
+}
+
+.subheading h3:before {
+    left: 0;
+}
+
+.subheading h3:after {
+    right: 0;
+}
+
+/* Timeline Lines */
+.line-left {
+    width: 2px;
+    height: 100%;
+    background-color: #e1e1e1;
+    position: absolute;
+    left: -10px;
+}
+
+.year {
+    height: 100%;
+    left: -10px;
+    top: 0;
+    position: absolute;
+}
+.year .to {
+  font-size: 16px;
+  position: absolute;
+  -webkit-transform: translateX(-120%);
+  -ms-transform: translateX(-120%);
+  transform: translateX(-120%);
+  color: #ffffff;
+  top: -18px;
+}
+
+.year .from {
+  font-size: 16px;
+  position: absolute;
+  -webkit-transform: translateX(-120%);
+  -ms-transform: translateX(-120%);
+  transform: translateX(-120%);
+  color: #ffffff;
+  bottom: -18px;
+}
+/* Progress Bar */
+.progress {
+    height: 10px;
+    background-color: #404144;
+    margin-bottom: 20px;
+    overflow: visible;
+}
+
+.progress-bar {
+    position: relative;
+    height: 100%;
+    background-color: white;
+    transition: all 2s ease-out;
+}
+
+.progress-value {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/************************************
+ * Blue Color CSS
+ ************************************/
+.header-main .image-container .header-name:before {
+    background-color: #00A3E1;
+}
+
+.page-heading h2 {
+    color: #00A3E1;
+}
+
+.page-heading .icon {
+    color: #00A3E1;
+}
+
+.subheading h3 {
+    border-color: #00A3E1 !important;
+}
+
+.subheading h3:before,
+.subheading h3:after {
+    background-color: #00A3E1;
+}
+
+.banner-section h1 span {
+    color: #00A3E1;
+}
+
+.banner-section p .cd-words-wrapper b {
+    border-color: #00A3E1 !important;
+}
+
+.about-info ul li span.title {
+    border-color: #00A3E1 !important;
+}
+
+.btn-main {
+    border-color: #00A3E1 !important;
+    color: #00A3E1;
+}
+
+.btn-main:after {
+    background-color: #00A3E1;
+}
+
+.services .service-item .icon {
+    color: #00A3E1 !important;
+}
+
+.testimonial-item .testimonial-content:before {
+    color: #00A3E1 !important;
+}
+
+ul.experience li span.line-left,
+ul.education li span.line-left {
+    background-color: #00A3E1 !important;
+}
+
+ul.experience li span.line-left:before,
+ul.experience li span.line-left:after,
+ul.education li span.line-left:before,
+ul.education li span.line-left:after {
+    border-color: #00A3E1 !important;
+}
+
+ul.experience .content h5,
+ul.education .content h5 {
+    color: #00A3E1;
+}
+
+.progress .progress-bar {
+    background-color: #00A3E1;
+}
+
+.progress .progress-bar:after {
+    border-bottom-color: #0089bd!important;
+    content: "";
+    display: block;
+    border: 15px solid transparent;
+    border-bottom: 21px solid transparent;
+    position: absolute;
+    top: -26px;
+    right: -12px;
+}
+
+.portfolio-section .portfolio-filter ul li.active {
+    background-color: #00A3E1;
+}
+
+.portfolio-section .item figure:before {
+    background-color: #00A3E1;
+}
+
+.ajax-portfolio-popup .information span.title {
+    color: #00A3E1;
+}
+
+.blog-section .blog-item .blog-content .cat {
+    color: #00A3E1;
+}
+
+.contact-info .info-item .icon {
+    color: #00A3E1;
+}
+
+blockquote {
+    border-color: #00A3E1 !important;
+}
+
+.blog-page .blog-heading .cat {
+    color: #00A3E1;
+}
+.line-left::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+  position: absolute;
+  left: -4px;
+  top: -10px;
+}
+
+.line-left::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+  position: absolute;
+  left: -4px;
+  top: 100%;
+}
+
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.slide-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.slide-up-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+/* 3D 회전 효과를 위한 perspective 설정 */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.rotate-enter {
+  opacity: 0;
+  transform: rotateX(90deg); /* 화면이 90도 뒤집혀서 시작 */
+}
+
+.rotate-enter-active {
+  opacity: 1;
+  transform: rotateX(0deg); /* 화면이 정상적으로 회전해서 보임 */
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.rotate-exit {
+  opacity: 1;
+  transform: rotateX(0deg); /* 정상적으로 보이는 상태에서 시작 */
+}
+
+.rotate-exit-active {
+  opacity: 0;
+  transform: rotateX(-90deg); /* 화면이 위로 회전하면서 사라짐 */
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+/* 기본 레이아웃과 크기 설정 */
+.content {
+  height: 100%;
+  width: 100%;
+}
+
